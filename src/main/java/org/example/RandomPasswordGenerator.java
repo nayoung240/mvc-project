@@ -2,9 +2,10 @@ package org.example;
 
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
-import org.w3c.dom.CharacterData;
+import org.passay.PasswordGenerator;
+import org.passay.CharacterData;
 
-public class RandomPasswordGenerator implements PasswordGenerator {
+public class RandomPasswordGenerator implements org.example.PasswordGenerator {
     /**
      * Special characters allowed in password.
      */
@@ -12,19 +13,19 @@ public class RandomPasswordGenerator implements PasswordGenerator {
 
     public static final String ERROR_CODE = "ERRONEOUS_SPECIAL_CHARS";
 
-//    @Override
+    @Override
     public String generatePassword() {
         PasswordGenerator gen = new PasswordGenerator();
 
-        CharacterData lowerCaseChars = EnglishCharacterData.LowerCase;
+        EnglishCharacterData lowerCaseChars = EnglishCharacterData.LowerCase;
         CharacterRule lowerCaseRule = new CharacterRule(lowerCaseChars);
         lowerCaseRule.setNumberOfCharacters(2);
 
-        CharacterData upperCaseChars = EnglishCharacterData.UpperCase;
+        EnglishCharacterData upperCaseChars = EnglishCharacterData.UpperCase;
         CharacterRule upperCaseRule = new CharacterRule(upperCaseChars);
         upperCaseRule.setNumberOfCharacters(2);
 
-        CharacterData digitChars = EnglishCharacterData.Digit;
+        EnglishCharacterData digitChars = EnglishCharacterData.Digit;
         CharacterRule digitRule = new CharacterRule(digitChars);
         digitRule.setNumberOfCharacters(2);
 
